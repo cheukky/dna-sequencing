@@ -96,7 +96,7 @@ class TestClass(object):
         assert res["Max consecutive Cs"] == 1
 
     def test_consec_cs(self):
-        res = dna_sequencing("AAA")
+        res = dna_sequencing("CCC")
         assert res["Max consecutive Cs"] == 3
 
     def test_more_consec_cs(self):

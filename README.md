@@ -13,3 +13,9 @@ This program accepts a string of characters and calculates the following:
 * The greatest number of consecutive Cs (upper or lower case).
 * The greatest number of consecutive Gs (upper or lower case).
 * The greatest number of consecutive Ts (upper or lower case).
+
+The output is printed to console and the function also returns a dicionary of the results.
+Can be run on the CLI like this
+```python
+python dna_sequencing.py [sequence to be interpreted]
+```

@@ -43,10 +43,29 @@ def dna_sequencing(sequence):
             if(t_consec > t_maxconsec):
                 t_maxconsec = t_consec
             t_consec = 0
+        elif letter == "C" or letter == 'c':
+            c_counter += 1
+            c_consec += 1
+
+            if(a_consec > a_maxconsec):
+                a_maxconsec = a_consec
+            a_consec = 0
+
+            if(g_consec > g_maxconsec):
+                g_maxconsec = g_consec
+            g_consec = 0
+
+            if(t_consec > t_maxconsec):
+                t_maxconsec = t_consec
+            t_consec = 0
         else:
             if(a_consec > a_maxconsec):
                 a_maxconsec = a_consec
             a_consec = 0
+
+            if(c_consec > c_maxconsec):
+                c_maxconsec = c_consec
+            c_consec = 0
 
     # consecutive
     if(a_consec > a_maxconsec):
@@ -61,6 +80,7 @@ def dna_sequencing(sequence):
     # percentages
     if len(sequence) > 0:
         a_percent = a_counter/len(sequence)
+        c_percent = c_counter/len(sequence)
 
     result["A"] = a_counter
     result["C"] = c_counter
@@ -80,10 +100,13 @@ def dna_sequencing(sequence):
     result["Percentage of other characters"] = other_percent
 
     print("Number of As: "+str(result["A"]))
+    print("Number of Cs: "+str(result["C"]))
 
     print("Greatest number of consecutive As: " + str(result["Max consecutive As"]))
+    print("Greatest number of consecutive Cs: " + str(result["Max consecutive Cs"]))
 
     print("Percentage of As:"+str(result["Percentage of As"]))
+    print("Percentage of Cs:"+str(result["Percentage of Cs"]))
 
     return result
 
