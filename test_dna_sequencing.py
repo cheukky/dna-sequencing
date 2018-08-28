@@ -70,3 +70,63 @@ class TestClass(object):
     def test_more_percent_as_3(self):
         res = dna_sequencing("AaaanCcccdGgggeTTtTf")
         assert res["Percentage of As"] == 0.2
+
+    def test_c(self):
+        res = dna_sequencing("C")
+        assert res["C"] == 1
+
+    def test_cs(self):
+        res = dna_sequencing("CCC")
+        assert res["C"] == 3
+
+    def test_more_cs(self):
+        res = dna_sequencing("ACGTACGTACGT")
+        assert res["C"] == 3
+
+    def test_more_cs_2(self):
+        res = dna_sequencing("AAAACCCCGGGGTTTT")
+        assert res["C"] == 4
+
+    def test_more_cs_3(self):
+        res = dna_sequencing("AaaanCcccdGgggeTTtTf")
+        assert res["C"] == 4
+
+    def test_consec_c(self):
+        res = dna_sequencing("C")
+        assert res["Max consecutive Cs"] == 1
+
+    def test_consec_cs(self):
+        res = dna_sequencing("AAA")
+        assert res["Max consecutive Cs"] == 3
+
+    def test_more_consec_cs(self):
+        res = dna_sequencing("ACGTACGTACGT")
+        assert res["Max consecutive Cs"] == 1
+
+    def test_more_consec_cs_2(self):
+        res = dna_sequencing("AAAACCCCGGGGTTTT")
+        assert res["Max consecutive Cs"] == 4
+
+    def test_more_consec_cs_3(self):
+        res = dna_sequencing("AaaanCcccdGgggeTTtTf")
+        assert res["Max consecutive Cs"] == 4
+
+    def test_percent_c(self):
+        res = dna_sequencing("C")
+        assert res["Percentage of Cs"] == 1.0
+
+    def test_percent_cs(self):
+        res = dna_sequencing("CCC")
+        assert res["Percentage of Cs"] == 1.0
+
+    def test_more_percent_cs(self):
+        res = dna_sequencing("ACGTACGTACGT")
+        assert res["Percentage of Cs"] == 0.25
+
+    def test_more_percent_cs_2(self):
+        res = dna_sequencing("AAAACCCCGGGGTTTT")
+        assert res["Percentage of Cs"] == 0.25
+
+    def test_more_percent_cs_3(self):
+        res = dna_sequencing("AaaanCcccdGgggeTTtTf")
+        assert res["Percentage of Cs"] == 0.2
