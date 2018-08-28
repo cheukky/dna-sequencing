@@ -1,4 +1,4 @@
-# dna-sequencing
+# dna-sequencing [![Build Status](https://travis-ci.com/cheukky/dna-sequencing.svg?branch=master)](https://travis-ci.com/cheukky/dna-sequencing)
 A small project that accepts a string and outputs various statistics for it
 
 This program accepts a string of characters and calculates the following:
